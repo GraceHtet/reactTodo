@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const InputTodo = ({ addTodoItem }) => {
   const [title, setTitle] = useState('');
@@ -29,7 +30,7 @@ const InputTodo = ({ addTodoItem }) => {
           onChange={handleChange}
           className="input-text"
         />
-        <button className="input-submit" type="button">Submit</button>
+        <button className="input-submit" type="button" onClick={handleSubmit}>Submit</button>
       </form>
       <span className="submit-warning">{message}</span>
     </>
@@ -37,6 +38,6 @@ const InputTodo = ({ addTodoItem }) => {
 };
 
 InputTodo.propTypes = {
-  addTodoItem: PropTypes.func.isRequired,
+  addTodoItem: PropTypes.func,
 };
 export default InputTodo;
